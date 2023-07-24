@@ -1,0 +1,154 @@
+* {
+  margin: 0; /*reset espaçõs padroes do navegador*/
+  padding: 0; /*reset prenchimento*/
+  box-sizing: border-box; /*medida das caixas*/
+}
+/*facilitando minha troca de modos*/
+:root /*nome padrão*/ {
+  --text-color: white;
+  --bg-url: url(./assets/DM\ mobie.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5); /*coloração da borda padrão RGB*/
+  --surface-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /*coloração do background padrão RGB*/
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --hightligh-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/DG-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --hightligh-color: rgba(255, 255, 255, 0.1);
+  --switch-bg-url: url(./assets/sum.svg);
+}
+/*pllano de fundo do boy*/
+body {
+  background: var(--bg-url) no-repeat top center/ cover;
+  /*chot*/
+}
+/* o "*" é uma especie de seletor universal. Fasendo essa apliação a todos os elementos do body */
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px; /*largura*/
+  margin: 56px auto 0px; /*encima dos lados e embaixo*/
+  padding: 0 24px;
+}
+
+/*profile*/
+#profile {
+  text-align: center; /*centralisa a imagem em "display:iline;*/
+  padding: 24px; /*os espaços padrões da caxa*/
+}
+#profile img {
+  width: 112px;
+}
+#profile p {
+  font-weight: 500;
+  line-height: 24px; /*altura da linha*/
+  margin-top: 8px; /*acresenta um espaço de 8 px entre o texto e a imagem*/
+}
+
+/*switch*/
+#switch {
+  position: relative;
+  width: 64px;
+
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: wheat var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+  list-style: none;
+
+  display: flex; /*ajute flexivel*/
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 24px 0;
+}
+/*botões*/
+ul a {
+  display: flex; /*o displai flex iguala o tamanho da caxa*/
+  align-items: center; /*centralisa no eixo peincipal da caxa*/
+  justify-content: center; /*centralisa no meio do body*/
+  padding: 16px 24px;
+
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px; /*arredondamento de bordas*/
+  backdrop-filter: blur(4px); /*acresenta um leve embaçado*/
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: backgroundd 0.2s; /*transição dos botões*/
+}
+/*transição entre botões*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+/*transiçãa de botões*/
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  transition: beckgroun 0.2s;
+  border-radius: 50%;
+}
+#social-links a:hover {
+  background: var(--hightligh-color);
+}
+footer {
+  padding: 24px;
+  text-align: center;
+  font-size: 14px;
+}
