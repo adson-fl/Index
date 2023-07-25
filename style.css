@@ -32,6 +32,7 @@
 body {
   background: var(--bg-url) no-repeat top center/ cover;
   /*chot*/
+  height: 100vh;
 }
 /* o "*" é uma especie de seletor universal. Fasendo essa apliação a todos os elementos do body */
 body * {
@@ -152,4 +153,14 @@ footer {
   padding: 24px;
   text-align: center;
   font-size: 14px;
+}
+
+/*midia queries*/
+@media(min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop-dark .jpg);
+  }
+  .light {
+    --bg-url: url(./assets/bg-desktop-light  .jpg);
+  }
 }
